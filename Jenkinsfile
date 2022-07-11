@@ -7,9 +7,8 @@ pipeline {
     }
 
     environment {
-        registry="https://docker-local.artifactory.linksmt.it"
-        image="student-microservice-jenkins"
-        registryCredential = 'artifactory_credential'
+        registry="vconte/student-microservice-jenkins"
+        registryCredential = 'docker-hub-credentials'
         dockerImage = ''
     }
 
@@ -33,7 +32,7 @@ pipeline {
         stage('Building image') {
             steps {
                 script {
-                   dockerImage = docker.build("${image}:latest")
+                   dockerImage = docker.build("${registry}:latest")
                 }
             }
         }
@@ -41,7 +40,7 @@ pipeline {
         stage('Deploy to Artifactory') {
             steps {
                 script {
-                    docker.withRegistry( registry, registryCredential ) {
+                    docker.withRegistry( '', registryCredential ) {
                         dockerImage.push()
                     }
                 }
