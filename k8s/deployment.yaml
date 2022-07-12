@@ -18,8 +18,8 @@ spec:
         app: student-microservice-jenkins
     spec:
       containers:
-      - name: bff-course-rest
-        image: vconte/student-microservice-jenkins:1.0.0
+      - name: student-microservice-jenkins
+        image: vconte/student-microservice-jenkins:latest
         imagePullPolicy: Always
         ports:
         - containerPort: 8080
