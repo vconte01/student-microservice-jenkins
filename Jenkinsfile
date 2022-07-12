@@ -49,9 +49,9 @@ pipeline {
 
        stage('Kubernates Rollout') {
             steps {
-                  withKubeConfig([credentialsId: 'ido_k8s_file']) {
-                         sh "kubectl apply -f ./k8s/deployment.yaml -n corso"
-                  }
+
+                  sh "kubectl apply -f ./k8s/deployment.yaml -n corso"
+
             }
         }
 
