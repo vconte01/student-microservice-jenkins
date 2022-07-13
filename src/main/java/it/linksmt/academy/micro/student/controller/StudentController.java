@@ -14,10 +14,10 @@ public class StudentController {
     private static final Logger logger = LoggerFactory.getLogger(StudentController.class);
 
 
-    @GetMapping
-    public String  hello() {
+   /*  @GetMapping
+   public String  hello() {
         return "Hello vINCENZO!!!";
-    }
+    }*/
 
 
 }
