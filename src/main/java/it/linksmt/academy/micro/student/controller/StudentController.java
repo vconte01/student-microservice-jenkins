@@ -12,12 +12,10 @@ public class StudentController {
 
 
     private static final Logger logger = LoggerFactory.getLogger(StudentController.class);
-
-
-   /*  @GetMapping
+    @GetMapping
    public String  hello() {
         return "Hello vINCENZO!!!";
-    }*/
+    }
 
 
 }
